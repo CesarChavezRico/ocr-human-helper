@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Human OCR Helper</title>
+</head>
+<body>
+  <div class="container">
+      {% include 'reading_form.html' %}
+  <div class="container">
+      <p>Cropped Image URL: {{ cropped_image_url }}</p>
+      <img src={{ cropped_image_url }}>
+      <p>Original Image URL: {{ original_image_url }}</p>
+      <img src={{ original_image_url }} height={{ height }} width={{ width }}>
+  </div>
+</body>
+</html>

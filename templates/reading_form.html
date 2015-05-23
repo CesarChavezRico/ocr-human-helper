@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    {% for message in errors %}
+      <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    <form method="POST" action="{{ url_for('validate', task_id=task_id) }}">
+        {{ form.hidden_tag() }}
+        {{ form.reading.label }} {{ form.reading(size=20) }}
+        {% set options_size = form.options_size %}
+        {{ form.outcome.label }} {{ form.outcome(size=options_size) }}
+        <input type="submit" value="Validate">
+    </form>
+</body>
+</html>
