@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="https://apis.google.com/js/client:platform.js" async defer></script>
+    <title></title>
+</head>
+<body>
+    {% block title %}Sign in{% endblock %}
+    {% block body %}
+      <h2>Sign in</h2>
+      <form action="" method=post>
+        {% if error %}<p class=error><strong>Error:</strong> {{ error }}</p>{% endif %}
+        <p>
+          OpenID:
+          <input type=text name=openid size=30>
+          <input type=submit value="Sign in">
+          <input type=hidden name=next value="{{ next }}">
+      </form>
+        <span id="signinButton">
+          <span
+            class="g-signin"
+            data-callback="signinCallback"
+            data-clientid="382197999605-kh8uo8cup46ohrnh2hdrtakcm6f36ore.apps.googleusercontent.com"
+            data-cookiepolicy="single_host_origin"
+            data-requestvisibleactions="http://schema.org/AddAction"
+            data-scope="https://www.googleapis.com/auth/plus.login">
+          </span>
+        </span>
+    {% endblock %}
+</body>
+</html>
